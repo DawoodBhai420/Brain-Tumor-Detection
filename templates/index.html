@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Brain Tumor Detection</title>
+        <link href="https://cdn.jsdelivr.net/npn/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="r">
+    </head>
+    <body>
+        <h1 class="text-center">Brain Tumor Detector</h1>
+        <h3>Please upload MRI scan of your brain.</h3>
+        <form class="p-3 text-center" action='/prediction', method="post" enctype="multipart/form-data">
+            <input class="form-control" type="file" name="imagefile">
+            <input class="btn" type="submit" value="Get MRI report">
+        </form>
+    </body>
+</html>
