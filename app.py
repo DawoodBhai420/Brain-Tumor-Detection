@@ -13,8 +13,6 @@ def home():
 
 @app.route('/prediction', methods=['POST'])
 def predict():
-    result = {1: "Healthy",
-              0: "tumor"}
     imagefile = request.files['imagefile']
     image_path = "./images/" + imagefile.filename
     imagefile.save(image_path)
