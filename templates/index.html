@@ -1,15 +1,50 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Brain Tumor Detection</title>
-        <link href="https://cdn.jsdelivr.net/npn/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="r">
-    </head>
-    <body>
-        <h1 class="text-center">Brain Tumor Detector</h1>
-        <h3>Please upload MRI scan of your brain.</h3>
-        <form class="p-3 text-center" action='/prediction', method="post" enctype="multipart/form-data">
-            <input class="form-control" type="file" name="imagefile">
-            <input class="btn" type="submit" value="Get MRI report">
-        </form>
-    </body>
+<html lang="en">
+<head>
+	<title>Brain Tumor</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css"
+		href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}">
+
+</head>
+<body>
+
+	<div class="contact1">
+		<div class="container-contact1">
+			<div class="contact1-pic js-tilt" data-tilt>
+				<img src="./static/images/brain.png" style="border-radius: 50%;" alt="IMG">
+			</div>
+
+			<form action="/predict" method="post" class="contact1-form" enctype="multipart/form-data">
+				<span class="contact1-form-title">
+					Check Your Brain MRI
+				</span>
+
+				<div class="wrap-input1">
+					<input type="file" name="imagefile">
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="container-contact1-form-btn">
+					<button type="submit" class="contact1-form-btn">
+						<span>
+							Get MRI Report
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="{{ url_for('static', filename='vendor/jquery/jquery-3.2.1.min.js')}}"></script>
+	<script src="{{ url_for('static', filename='vendor/tilt/tilt.jquery.min.js')}}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+</body>
 </html>
